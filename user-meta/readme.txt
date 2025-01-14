@@ -3,8 +3,8 @@ Contributors: khaledsaikat, sourov
 Tags: user-management-plugin, member, user-export, user-profile, user-registration, email-notification, user-login, front-end, redirection, user-listing, captcha
 Requires at least: 4.7
 Requires PHP: 5.6.0
-Tested up to: 6.4
-Stable tag: 3.1
+Tested up to: 6.7.1
+Stable tag: 3.1.2
 Copyright: User Meta, https://user-meta.com
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
@@ -162,6 +162,10 @@ If you have suhosin installed, use following too.
 09. User listing
 
 == Changelog ==
+
+= 3.1.2 =
+* Fix: Security fix
+* Public profile shortcode functionality reduced and output restricted 
 
 = 3.0 =
 * Bootstrap updated to v5

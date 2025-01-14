@@ -56,7 +56,7 @@ class PublicProfile
 
         foreach ($fields as $key => $field){
 
-            if(in_array($field['field_type'], ['html', 'captcha', 'page_heading', 'section_heading']))
+            if(in_array($field['field_type'], ['user_pass', 'html', 'captcha', 'page_heading', 'section_heading']))
                 continue;
 
             $metaKey = !empty($field['meta_key']) || !empty($field['field_type']) ? (!empty($field['meta_key']) ? $field['meta_key'] : $field['field_type'] ): '';

@@ -96,7 +96,19 @@ class ShortcodesController
         ), $atts));
 
         $publicProfile = new PublicProfile($form, $call, $style);
-        return $publicProfile->generate();
+
+        if (!$userMeta->isPro()) {
+            // show public profile only to user with 'edit_user' capability
+            if (current_user_can('edit_users')) {
+                return $publicProfile->generate();
+            }
+            else {
+                return $userMeta->showError(esc_html__('You do not have permission to view this user profile!', $userMeta->name));
+            }
+        }
+        else {
+            return $publicProfile->generate();
+        }        
     }
  
 

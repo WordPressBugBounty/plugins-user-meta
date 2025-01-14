@@ -61,7 +61,9 @@ class SupportHtmlModel
         $html .= '<p><div><strong>' . __('Profile shortcode', $userMeta->name) . '</div></strong>[user-meta-profile form="Form_Name"]</p>';
         $html .= '<p><div><strong>' . __('Registration shortcode', $userMeta->name) . '</strong></div>[user-meta-registration form="Form_Name"]</p>';
         $html .= '<p><div><strong>' . __('Profile / Registration', $userMeta->name) . '</strong></div><div>[user-meta type=profile-registration form="Form_Name"]</div><div><em>(To show user profile if user logged in, or showing registration form, if user not logged in.)</em></div></p>';
-        $html .= '<p><div><strong>' . __('Public profile', $userMeta->name) . '</strong></div><div>[user-meta type=public form="Form_Name"] or [user-meta-public-profile form="Form_Name"]</div><div><em>(To show public profile if user_id parameter provided as GET request. For the later one, optional parameters: call="id/email/username", style="table/plain/line")</em></div></p>';
+        if ($userMeta->isPro()) {
+            $html .= '<p><div><strong>' . __('Public profile', $userMeta->name) . '</strong></div><div>[user-meta type=public form="Form_Name"] or [user-meta-public-profile form="Form_Name"]</div><div><em>(To show public profile if user_id parameter provided as GET request. For the later one, optional parameters: call="id/email/username", style="table/plain/line")</em></div></p>';
+        }
         $html .= '<p><div><strong>' . __('Login shortcode', $userMeta->name) . '</strong></div>[user-meta-login] OR [user-meta-login form="Form_Name"]</p>';
         if ($userMeta->isPro()) {
             $html .= '<p><div><strong>' . __('Field shortcode', $userMeta->name) . '</strong></div>[user-meta-field id=Field_ID]</p>';

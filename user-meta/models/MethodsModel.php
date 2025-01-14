@@ -80,6 +80,9 @@ class MethodsModel
                 return $userMeta->showError(__('User registration is currently not allowed.', $userMeta->name));
             // elseif ( ! get_option( 'users_can_register' ) )
         } elseif ($actionType == 'public') {
+            if (!current_user_can('edit_users') && !$userMeta->isPro()) {
+                return $userMeta->showError(esc_html__('You do not have permission to view this user profile!', $userMeta->name));
+            }
             if (! empty($_REQUEST['user_id'])) {
                 $userID = esc_attr($_REQUEST['user_id']);
                 $user = get_user_by('id', $userID);

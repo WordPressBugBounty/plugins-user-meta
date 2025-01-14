@@ -3,7 +3,7 @@
  * Plugin Name: User Meta Lite
  * Plugin URI: https://user-meta.com
  * Description: A well-designed, feature-rich, and easy to use user management plugin.
- * Version: 3.1
+ * Version: 3.1.2
  * Requires at least: 4.7
  * Requires PHP: 5.6.0
  * Author: User Meta
